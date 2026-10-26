@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="210" viewBox="0 0 900 210" role="img" aria-label="Career path from computer vision and firmware in 2018 to production GenAI in 2024">
+<title>Career path from computer vision and firmware in 2018 to production GenAI in 2024</title>
+<style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  .rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) backwards; }
+  
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect width="900" height="210" rx="16" fill="#0B1B3A"/>
+
+<path id="road" d="M48 92 H852" fill="none" stroke="#2C5DB8" stroke-width="3"/>
+<path d="M842 84 L852 92 L842 100" fill="none" stroke="#2C5DB8" stroke-width="3" stroke-linejoin="round"/>
+<circle r="4" fill="#EAF2FF"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#road"/></animateMotion></circle>
+<g class="rise" style="animation-delay:0.10s">
+  <text x="48" y="66" font-size="16" font-weight="700" fill="#4EA8FF">2018</text>
+  <circle cx="56" cy="92" r="8" fill="#0B1B3A" stroke="#4EA8FF" stroke-width="3"/>
+  <text x="48" y="134" font-size="15" font-weight="700" fill="#EAF2FF">Computer vision</text>
+  <text x="48" y="158" font-size="14" fill="#A9BEDF">Automotive light-</text>
+  <text x="48" y="178" font-size="14" fill="#A9BEDF">guide inspection</text>
+</g>
+<g class="rise" style="animation-delay:0.19s">
+  <text x="188" y="66" font-size="16" font-weight="700" fill="#4EA8FF">2019</text>
+  <circle cx="196" cy="92" r="8" fill="#0B1B3A" stroke="#4EA8FF" stroke-width="3"/>
+  <text x="188" y="134" font-size="15" font-weight="700" fill="#EAF2FF">Firmware &amp; PCBs</text>
+  <text x="188" y="158" font-size="14" fill="#A9BEDF">Beacons and</text>
+  <text x="188" y="178" font-size="14" fill="#A9BEDF">industrial RFID</text>
+</g>
+<g class="rise" style="animation-delay:0.28s">
+  <text x="328" y="66" font-size="16" font-weight="700" fill="#4EA8FF">2021</text>
+  <circle cx="336" cy="92" r="8" fill="#0B1B3A" stroke="#4EA8FF" stroke-width="3"/>
+  <text x="328" y="134" font-size="15" font-weight="700" fill="#EAF2FF">IoT freelance</text>
+  <text x="328" y="158" font-size="14" fill="#A9BEDF">LoRaWAN, LTE,</text>
+  <text x="328" y="178" font-size="14" fill="#A9BEDF">MQTT telemetry</text>
+</g>
+<g class="rise" style="animation-delay:0.37s">
+  <text x="468" y="66" font-size="16" font-weight="700" fill="#4EA8FF">2022</text>
+  <circle cx="476" cy="92" r="8" fill="#0B1B3A" stroke="#4EA8FF" stroke-width="3"/>
+  <text x="468" y="134" font-size="15" font-weight="700" fill="#EAF2FF">Robotics</text>
+  <text x="468" y="158" font-size="14" fill="#A9BEDF">FPGA + neural nets,</text>
+  <text x="468" y="178" font-size="14" fill="#A9BEDF">ANA Avatar XPRIZE</text>
+</g>
+<g class="rise" style="animation-delay:0.46s">
+  <text x="608" y="66" font-size="16" font-weight="700" fill="#4EA8FF">2023</text>
+  <circle cx="616" cy="92" r="8" fill="#0B1B3A" stroke="#4EA8FF" stroke-width="3"/>
+  <text x="608" y="134" font-size="15" font-weight="700" fill="#EAF2FF">Quant developer</text>
+  <text x="608" y="158" font-size="14" fill="#A9BEDF">DeFi strategies,</text>
+  <text x="608" y="178" font-size="14" fill="#A9BEDF">Singapore</text>
+</g>
+<g class="rise" style="animation-delay:0.55s">
+  <text x="748" y="66" font-size="16" font-weight="700" fill="#4EA8FF">2024</text>
+  <circle cx="756" cy="92" r="8" fill="#4EA8FF" stroke="#4EA8FF" stroke-width="3"/>
+  <text x="748" y="134" font-size="15" font-weight="700" fill="#EAF2FF">AI/ML Engineer</text>
+  <text x="748" y="158" font-size="14" fill="#A9BEDF">GenAI in production</text>
+  <text x="748" y="178" font-size="14" fill="#A9BEDF">at Arkon Data</text>
+</g>
+</svg>

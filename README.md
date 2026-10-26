@@ -1,16 +1,87 @@
-## Hi there 👋
+<p align="center">
+  <img src="assets/banner.svg" width="100%" alt="Gerardo Vilchis, AI/ML Engineer and Data Scientist. I ship LLM agents to production.">
+</p>
 
-<!--
-**lgvil97/lgvil97** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm an AI/ML engineer at **Arkon Data**, building LLM agents, RAG systems and ML pipelines that run in production, from raw data through training, deployment and monitoring. I came to GenAI from embedded systems, robotics and quant development, so I care about what happens after the demo: guardrails, latency, token cost and observability.
 
-Here are some ideas to get you started:
+<p align="center">
+  <img src="assets/impact.svg" width="100%" alt="40+ countries use my finance agents. 8 years of engineering. 2 Databricks certifications. M.Sc. in Computer Science.">
+</p>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Flagship: a finance multi-agent system
+
+Financial analysts in more than 40 countries use it to pull income statements and drill into the products, entities and drivers that move results the most. A DSPy core applies input and output guardrails and routes each task to the right LLM, then hands work to region-specific Genie agents and a Knowledge Assistant over MCP. It runs on Databricks Model Serving, behind a React app and Microsoft Teams.
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#152C55", "primaryTextColor": "#EAF2FF", "primaryBorderColor": "#4EA8FF", "lineColor": "#4EA8FF", "secondaryColor": "#0B1B3A", "tertiaryColor": "#0B1B3A", "clusterBkg": "#0B1B3A", "clusterBorder": "#2C5DB8", "titleColor": "#EAF2FF", "edgeLabelBackground": "#0B1B3A"}}}%%
+flowchart LR
+    UI["React app on Databricks Apps<br/>+ Microsoft Teams"] --> CORE["DSPy core<br/>guardrails · per-task LLM routing"]
+    CORE -- MCP --> AGENTS
+    subgraph AGENTS["Subagents"]
+        direction TB
+        PL["Genie agent<br/>P&L by region"]
+        RTM["Genie agent<br/>route-to-market"]
+        KA["Knowledge Assistant<br/>RAG over company docs"]
+    end
+    KA --> SEARCH[("Databricks AI Search")]
+    CORE --- MEM[("Lakebase memory")]
+    CORE -.-> OBS["MLflow Tracing<br/>tokens · cost · latency"]
+```
+
+The code belongs to a client, so the repository is private. The architecture above is the part I can share.
+
+## More in production
+
+<details>
+<summary><b>Sales forecasting and product cannibalization</b> · retail/CPG</summary>
+<br>
+
+- Owned the whole data science workflow on the client's Databricks data, from EDA and feature engineering to training and evaluation, to forecast sales across a bakery product portfolio.
+- Modeled which products eat into each other's sales, to guide assortment and demand planning.
+- Served the model from a Databricks Model Serving endpoint that an LLM agent in Microsoft Teams calls for predictions and cannibalization analysis on demand.
+
+**Stack:** Python, scikit-learn, MLflow, Databricks Model Serving
+</details>
+
+<details>
+<summary><b>Plant maintenance RAG assistant</b> · industrial bakery</summary>
+<br>
+
+- Built the RAG system behind an iPad assistant that answers failure-code, maintenance and operating questions from ingested machine manuals, citing the source of every answer.
+- Owned retrieval and generation on the client's Azure, delivered alongside Microsoft engineers.
+
+**Stack:** Microsoft Foundry, Azure AI Search, Python
+</details>
+
+## How I got here
+
+<p align="center">
+  <img src="assets/journey.svg" width="100%" alt="2018 computer vision, 2019 firmware and PCBs, 2021 IoT freelance, 2022 robotics for ANA Avatar XPRIZE, 2023 quant developer in Singapore, 2024 AI/ML engineer at Arkon Data.">
+</p>
+
+Since 2023 I've also taught AI, software and embedded systems at Universidad La Salle Bajío, in both bachelor's and master's programs.
+
+## Stack
+
+<p align="center">
+  <img src="assets/genai-stack.svg" width="100%" alt="Models: Claude, GPT, Gemini, Llama, Qwen, DeepSeek, Kimi, GLM. Agent frameworks: DSPy, LangGraph, LangChain, Deep Agents, CrewAI, MCP. Coding agents: Claude Code, Codex, OpenCode, Genie Code. Platforms: Databricks, MLflow, Microsoft Foundry, Azure, AWS.">
+</p>
+
+<p align="center">
+  <img src="assets/engineering-stack.svg" width="100%" alt="ML and data: PyTorch, TensorFlow, Keras, scikit-learn, OpenCV, NumPy, pandas, Plotly. Languages: Python, SQL, Bash, TypeScript, C, C++, Go. Backend and data: FastAPI, Flask, Streamlit, React, PostgreSQL, MySQL, MongoDB, Redis. Infra: Docker, Linux, Hetzner, Coolify, Tailscale, Cloudflare.">
+</p>
+
+## Certifications
+
+<p align="center">
+  <a href="https://credentials.databricks.com/d2e586de-cdc8-4f8a-87c8-84ff702bf1db"><img src="assets/cert-ml-professional.svg" width="49%" alt="Databricks Certified Machine Learning Professional, valid 2026 to 2028"></a>
+  <a href="https://credentials.databricks.com/dd688c7a-ead7-429b-8835-798822998ae8"><img src="assets/cert-genai-associate.svg" width="49%" alt="Databricks Certified Generative AI Engineer Associate, valid 2026 to 2028"></a>
+</p>
+
+## Right now
+
+- Shipping multi-agent systems on Databricks at Arkon Data.
+- Teaching AI at Universidad La Salle Bajío.
+- Learning Go, then TypeScript, by building the roadmap.sh backend projects.
+
+<sub>AI brand icons from <a href="https://github.com/lobehub/lobe-icons">Lobe Icons</a>; other logos from <a href="https://simpleicons.org">Simple Icons</a>. Images are generated by <code>scripts/build-assets.mjs</code>.</sub>

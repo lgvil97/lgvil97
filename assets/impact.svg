@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="170" viewBox="0 0 900 170" role="img" aria-label="40+ countries use my finance agents; 8 years of engineering; 2 Databricks certifications; M.Sc. in Computer Science">
+<title>40+ countries use my finance agents; 8 years of engineering; 2 Databricks certifications; M.Sc. in Computer Science</title>
+<style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  .rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) backwards; }
+  
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect width="900" height="170" rx="16" fill="#0B1B3A"/>
+<g class="rise" style="animation-delay:0.10s">
+  <text x="56" y="78" font-size="48" font-weight="700" letter-spacing="-1" fill="#4EA8FF">40+</text>
+  <text x="56" y="112" font-size="16" fill="#EAF2FF">countries where analysts</text>
+  <text x="56" y="134" font-size="16" fill="#A9BEDF">use my finance agents</text>
+</g>
+<g class="rise" style="animation-delay:0.18s">
+  <text x="266" y="78" font-size="48" font-weight="700" letter-spacing="-1" fill="#4EA8FF">8 yrs</text>
+  <text x="266" y="112" font-size="16" fill="#EAF2FF">of engineering, from</text>
+  <text x="266" y="134" font-size="16" fill="#A9BEDF">firmware to GenAI</text>
+</g>
+<g class="rise" style="animation-delay:0.26s">
+  <text x="476" y="78" font-size="48" font-weight="700" letter-spacing="-1" fill="#4EA8FF">2×</text>
+  <text x="476" y="112" font-size="16" fill="#EAF2FF">Databricks certified,</text>
+  <text x="476" y="134" font-size="16" fill="#A9BEDF">ML and GenAI</text>
+</g>
+<g class="rise" style="animation-delay:0.34s">
+  <text x="686" y="78" font-size="48" font-weight="700" letter-spacing="-1" fill="#4EA8FF">M.Sc.</text>
+  <text x="686" y="112" font-size="16" fill="#EAF2FF">in Computer Science,</text>
+  <text x="686" y="134" font-size="16" fill="#A9BEDF">TecNM 2023</text>
+</g>
+</svg>

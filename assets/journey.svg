@@ -52,6 +52,6 @@
   <circle cx="756" cy="92" r="8" fill="#4EA8FF" stroke="#4EA8FF" stroke-width="3"/>
   <text x="748" y="134" font-size="15" font-weight="700" fill="#EAF2FF">AI/ML Engineer</text>
   <text x="748" y="158" font-size="14" fill="#A9BEDF">GenAI in production</text>
-  <text x="748" y="178" font-size="14" fill="#A9BEDF">at Arkon Data</text>
+  <text x="748" y="178" font-size="14" fill="#A9BEDF">and self-hosted infra</text>
 </g>
 </svg>

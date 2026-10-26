@@ -93,6 +93,7 @@ function banner() {
   const phrases = [
     'I ship LLM agents to production.',
     'Multi-agent systems on Databricks.',
+    'Self-hosted AI on zero-trust infra.',
     'RAG that cites its sources.',
     'From firmware in C to GenAI.',
   ];
@@ -116,36 +117,39 @@ function banner() {
     )
     .join('\n');
 
-  // The agent graph is drawn as PCB traces: a DSPy "chip" routing to three
-  // subagent pads, a nod to the embedded work that came first.
-  const traces = [
-    'M656 134 H700 L730 104 V80 H788',
-    'M656 150 H788',
-    'M656 166 H700 L730 196 V220 H788',
-  ];
+  // The agent graph is drawn as PCB traces: a supervisor "chip" routing to
+  // its domain subagents, a nod to the embedded work that came first.
   const pads = [
-    [80, 'P&L'],
-    [150, 'RTM'],
-    [220, 'RAG'],
+    [130, 50, 704, 'Finance'],
+    [140, 100, 724, 'HR'],
+    [150, 150, 0, 'IoT'],
+    [160, 200, 724, 'RTM'],
+    [170, 250, 704, 'Docs'],
   ];
+  // Outer traces turn first so none of them cross; corners are chamfered.
+  const trace = ([pin, pad, turn]) => {
+    if (pin === pad) return `M672 ${pin} H788`;
+    const s = Math.sign(pad - pin);
+    return `M672 ${pin} H${turn - 10} L${turn} ${pin + s * 10} V${pad - s * 10} L${turn + 10} ${pad} H788`;
+  };
   const graph = `
 <g fill="none" stroke="${C.trace}" stroke-width="3" stroke-linejoin="round">
-  ${traces.map((d, i) => `<path id="tr${i}" d="${d}"/>`).join('\n  ')}
-  ${[134, 150, 166].map((y) => `<path d="M588 ${y} H600"/>`).join(' ')}
-  ${[616, 628, 640].map((x) => `<path d="M${x} 110 V122"/><path d="M${x} 178 V190"/>`).join(' ')}
+  ${pads.map((p, i) => `<path id="tr${i}" d="${trace(p)}"/>`).join('\n  ')}
+  ${[135, 150, 165].map((y) => `<path d="M584 ${y} H596"/>`).join(' ')}
+  ${[614, 634, 654].map((x) => `<path d="M${x} 108 V120"/><path d="M${x} 180 V192"/>`).join(' ')}
 </g>
-<rect x="600" y="122" width="56" height="56" rx="6" fill="${C.tile}" stroke="${C.accent}" stroke-width="2"/>
-<text x="628" y="155" text-anchor="middle" font-size="14" font-weight="700" fill="${C.ink}">DSPy</text>
+<rect x="596" y="120" width="76" height="60" rx="6" fill="${C.tile}" stroke="${C.accent}" stroke-width="2"/>
+<text x="634" y="155" text-anchor="middle" font-size="12" font-weight="700" fill="${C.ink}">Supervisor</text>
 ${pads
   .map(
-    ([y, label]) => `<circle cx="800" cy="${y}" r="12" fill="${C.ground}" stroke="${C.accent}" stroke-width="3"/>
+    ([, y, , label]) => `<circle cx="800" cy="${y}" r="12" fill="${C.ground}" stroke="${C.accent}" stroke-width="3"/>
 <circle cx="800" cy="${y}" r="4" fill="${C.accent}"/>
 <text x="820" y="${y + 5}" font-size="14" font-weight="600" fill="${C.soft}">${esc(label)}</text>`,
   )
   .join('\n')}
-${traces
+${pads
   .map(
-    (_, i) => `<circle r="4" fill="${C.ink}"><animateMotion dur="2.4s" begin="-${(i * 0.8).toFixed(1)}s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#tr${i}"/></animateMotion></circle>`,
+    (_, i) => `<circle r="4" fill="${C.ink}"><animateMotion dur="2.4s" begin="-${(i * 0.48).toFixed(2)}s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#tr${i}"/></animateMotion></circle>`,
   )
   .join('\n')}`;
 
@@ -166,10 +170,10 @@ ${graph}`,
 
 function impact() {
   const items = [
-    ['40+', 'countries where analysts', 'use my finance agents'],
+    ['40+', 'countries where analysts', 'use my agent system'],
     ['8 yrs', 'of engineering, from', 'firmware to GenAI'],
     ['2×', 'Databricks certified,', 'ML and GenAI'],
-    ['M.Sc.', 'in Computer Science,', 'TecNM 2023'],
+    ['M.Sc.', 'in Computer Science,', 'completed 2023'],
   ];
   const body = items
     .map(
@@ -180,7 +184,7 @@ function impact() {
 </g>`,
     )
     .join('\n');
-  return frame({ w: 900, h: 170, label: '40+ countries use my finance agents; 8 years of engineering; 2 Databricks certifications; M.Sc. in Computer Science', body });
+  return frame({ w: 900, h: 170, label: 'analysts in 40+ countries use my multi-agent system; 8 years of engineering; 2 Databricks certifications; M.Sc. in Computer Science', body });
 }
 
 // --- career path ----------------------------------------------------------
@@ -192,7 +196,7 @@ function journey() {
     ['2021', 'IoT freelance', 'LoRaWAN, LTE,', 'MQTT telemetry'],
     ['2022', 'Robotics', 'FPGA + neural nets,', 'ANA Avatar XPRIZE'],
     ['2023', 'Quant developer', 'DeFi strategies,', 'Singapore'],
-    ['2024', 'AI/ML Engineer', 'GenAI in production', 'at Arkon Data'],
+    ['2024', 'AI/ML Engineer', 'GenAI in production', 'and self-hosted infra'],
   ];
   const x = (i) => 48 + i * 140;
   const last = stops.length - 1;
@@ -286,7 +290,8 @@ function engineeringStack() {
     ]],
     ['Infra', [
       S('docker', 'Docker'), S('linux', 'Linux'), S('hetzner', 'Hetzner'), S('coolify', 'Coolify'),
-      S('tailscale', 'Tailscale'), S('cloudflare', 'Cloudflare'),
+      S('tailscale', 'Tailscale'), S('cloudflare', 'Cloudflare'), S('opentofu', 'OpenTofu'),
+      S('ansible', 'Ansible'), T('SOPS'),
     ]],
   ]);
 }

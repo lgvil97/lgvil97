@@ -93,8 +93,8 @@ function banner() {
   const phrases = [
     'I ship LLM agents to production.',
     'Multi-agent systems on Databricks.',
+    'Guardrails and a judge on every answer.',
     'Self-hosted AI on zero-trust infra.',
-    'RAG that cites its sources.',
     'From firmware in C to GenAI.',
   ];
   const cycle = phrases.length * 4;
@@ -121,9 +121,9 @@ function banner() {
   // its domain subagents, a nod to the embedded work that came first.
   const pads = [
     [130, 50, 704, 'Finance'],
-    [140, 100, 724, 'HR'],
-    [150, 150, 0, 'IoT'],
-    [160, 200, 724, 'RTM'],
+    [140, 100, 724, 'Sales'],
+    [150, 150, 0, 'HR'],
+    [160, 200, 724, 'Plants'],
     [170, 250, 704, 'Docs'],
   ];
   // Outer traces turn first so none of them cross; corners are chamfered.
@@ -170,7 +170,7 @@ ${graph}`,
 
 function impact() {
   const items = [
-    ['40+', 'countries where analysts', 'use my agent system'],
+    ['40+', 'countries where analysts', 'use my AI data agent'],
     ['8 yrs', 'of engineering, from', 'firmware to GenAI'],
     ['2×', 'Databricks certified,', 'ML and GenAI'],
     ['M.Sc.', 'in Computer Science,', 'completed 2023'],
@@ -184,7 +184,7 @@ function impact() {
 </g>`,
     )
     .join('\n');
-  return frame({ w: 900, h: 170, label: 'analysts in 40+ countries use my multi-agent system; 8 years of engineering; 2 Databricks certifications; M.Sc. in Computer Science', body });
+  return frame({ w: 900, h: 170, label: 'analysts in 40+ countries use my AI data agent; 8 years of engineering; 2 Databricks certifications; M.Sc. in Computer Science', body });
 }
 
 // --- career path ----------------------------------------------------------
@@ -260,15 +260,16 @@ function genaiStack() {
     ]],
     ['Agent frameworks', [
       T('DSPy'), L('langgraph', 'LangGraph'), L('langchain', 'LangChain'), T('DA', 'Deep Agents'),
-      L('crewai', 'CrewAI'), L('mcp', 'MCP'),
+      L('crewai', 'CrewAI'), L('mcp', 'MCP'), L('n8n', 'n8n'),
     ]],
     ['Coding agents', [
       L('claudecode', 'Claude Code'), L('codex', 'Codex'), L('opencode', 'OpenCode'),
-      S('databricks', 'Genie Code'),
+      S('databricks', 'Genie Code'), S('databricks', 'Omnigent'), L('hermesagent', 'Hermes'),
+      L('openclaw', 'OpenClaw'),
     ]],
     ['Platforms', [
       S('databricks', 'Databricks'), S('mlflow', 'MLflow'), L('azureai', 'Foundry'),
-      L('azure', 'Azure'), L('aws', 'AWS'),
+      L('azure', 'Azure'), L('aws', 'AWS'), L('bedrock', 'Bedrock'),
     ]],
   ]);
 }
@@ -282,11 +283,15 @@ function engineeringStack() {
     ]],
     ['Languages', [
       S('python', 'Python'), T('SQL'), S('gnubash', 'Bash'), S('typescript', 'TypeScript'),
-      S('c', 'C'), S('cplusplus', 'C++'), S('go', 'Go'),
+      S('c', 'C'), S('cplusplus', 'C++'), S('go', 'Go'), T('M', 'MATLAB'), T('ASM', 'Assembly'),
     ]],
-    ['Backend & data', [
-      S('fastapi', 'FastAPI'), S('flask', 'Flask'), S('streamlit', 'Streamlit'), S('react', 'React'),
+    ['Backend', [
+      S('fastapi', 'FastAPI'), S('flask', 'Flask'), S('streamlit', 'Streamlit'), S('dash', 'Dash'),
+      S('react', 'React'),
+    ]],
+    ['Databases', [
       S('postgresql', 'Postgres'), S('mysql', 'MySQL'), S('mongodb', 'MongoDB'), S('redis', 'Redis'),
+      T('CDB', 'ChromaDB'), S('elasticsearch', 'Elastic'),
     ]],
     ['Infra', [
       S('docker', 'Docker'), S('linux', 'Linux'), S('hetzner', 'Hetzner'), S('coolify', 'Coolify'),

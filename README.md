@@ -2,27 +2,35 @@
   <img src="assets/banner.svg" width="100%" alt="Gerardo Vilchis, AI/ML Engineer and Data Scientist. I ship LLM agents to production.">
 </p>
 
-I'm an AI/ML engineer building LLM agents, RAG systems and ML pipelines that run in production on Databricks and on self-hosted infrastructure, from raw data through training, deployment and monitoring. I came to GenAI from embedded systems, robotics and quant development, so I care about what happens after the demo: guardrails, latency, token cost, security and observability.
+I'm an AI/ML engineer building LLM agents, RAG systems and ML pipelines that run in production on Databricks and on self-hosted infrastructure, from raw data through training, deployment and monitoring. I came to GenAI from embedded systems, robotics and quant development, so I care about what happens after the demo: guardrails, latency, token cost, security and observability. I build with an agentic coding workflow, using Omnigent to orchestrate Claude Code over Databricks MCP tools from first prototype to release.
 
 <p align="center">
-  <img src="assets/impact.svg" width="100%" alt="Analysts in 40+ countries use my multi-agent system. 8 years of engineering. 2 Databricks certifications. M.Sc. in Computer Science.">
+  <img src="assets/impact.svg" width="100%" alt="Analysts in 40+ countries use my AI data agent. 8 years of engineering. 2 Databricks certifications. M.Sc. in Computer Science.">
 </p>
 
-## Flagship: an enterprise multi-agent system
+## Flagship: an enterprise AI data agent
 
-It started as a finance assistant and grew into a company-wide data assistant. Analysts in more than 40 countries use it to pull income statements and drill into the products, entities and drivers that move results the most, and it now connects people/HR, IoT and route-to-market data with company documents too.
+One conversation answers questions across finance, route-to-market sales, HR, plant telemetry and executive documents. I presented it up to the client's CEO and the presidents of every country the company operates in, which earned it corporate-wide sponsorship. Analysts in more than 40 countries now use it to pull income statements and drill into the products, entities and drivers that move results the most.
 
-A Deep Agents/LangGraph supervisor delegates to specialized subagents, including DSPy modules wrapped in LangChain, with guardrails and per-task routing across several LLMs on Model Serving. Its tools are domain Genie agents over tables and Unity Catalog volumes, plus Genie Ontology through the Genie One MCP server. It runs as a Databricks App on the client's Azure Databricks: a React UI streams each subagent's events and renders Plotly charts, DataFrames, code and cited documents, with Lakebase holding memory and artifacts, and Microsoft Teams as a second front door.
+A Deep Agents/LangGraph supervisor delegates to a data expert that queries domain Genie agents, Genie Ontology through the Genie One MCP server, and a RAG Knowledge Assistant in parallel, so every answer cites its sources. Layered input and output guardrails catch prompt injection, PII and private HR data, including text inside uploaded images, and an LLM judge reviews every answer. Tasks are routed across tiered Claude and GPT models by cost and capability.
+
+It runs as a Databricks App on the client's Azure Databricks: a React UI streams each agent's steps, charts the results and exports them to Excel or PDF, backed by Lakebase memory and MLflow tracing. I load-tested it with k6 and release it through a spec-driven process with CI quality gates.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#152C55", "primaryTextColor": "#EAF2FF", "primaryBorderColor": "#4EA8FF", "lineColor": "#4EA8FF", "secondaryColor": "#0B1B3A", "tertiaryColor": "#0B1B3A", "clusterBkg": "#0B1B3A", "clusterBorder": "#2C5DB8", "titleColor": "#EAF2FF", "edgeLabelBackground": "#0B1B3A"}}}%%
 flowchart TB
-    UI["React app on Databricks Apps<br/>+ Microsoft Teams"] --> SUP["Supervisor<br/>Deep Agents · LangGraph<br/>guardrails · multi-LLM routing"]
-    SUP --> SUBS["Specialized subagents<br/>DSPy modules in LangChain"]
-    SUP -- tools --> GENIE["Domain Genie agents<br/>finance · HR · IoT · RTM<br/>docs in Unity Catalog volumes"]
-    SUP -- Genie One MCP --> ONT["Genie Ontology"]
-    SUP --- MEM[("Lakebase<br/>memory · artifacts")]
+    UI["React app on Databricks Apps<br/>streamed steps · charts · Excel/PDF"] --> GIN["Input guardrails<br/>prompt injection · PII · HR privacy"]
+    GIN --> SUP["Supervisor<br/>Deep Agents · LangGraph<br/>tiered Claude/GPT routing"]
+    SUP --> DX["Data expert<br/>queries every source in parallel"]
+    DX --> GENIE["Domain Genie agents<br/>finance · sales · HR · plants"]
+    DX -- Genie One MCP --> ONT["Genie Ontology"]
+    DX --> KA["RAG Knowledge Assistant<br/>executive documents"]
+    SUP --> OUT["Output guardrails<br/>LLM-as-judge review"]
+    OUT --> ANS(["Cited answer"])
+    SUP --- MEM[("Lakebase<br/>memory")]
 ```
+
+**Stack:** Deep Agents, LangGraph, DSPy, RAG, Azure Databricks (Apps, Genie agents, Genie Ontology, Genie One MCP, Knowledge Assistant, Model Serving, Lakebase, MLflow), k6
 
 The code belongs to a client, so the repository is private. The architecture above is the part I can share.
 
@@ -44,19 +52,19 @@ The code belongs to a client, so the repository is private. The architecture abo
 <summary><b>Sales forecasting and product cannibalization</b> · retail/CPG</summary>
 <br>
 
-- Owned the whole data science workflow on the client's Azure Databricks data, from EDA and feature engineering to training and evaluation, to forecast sales across a bakery product portfolio.
-- Modeled which products eat into each other's sales, to guide assortment and demand planning.
-- Served the model from a Databricks Model Serving endpoint that an LLM agent in Microsoft Teams calls for predictions and cannibalization analysis on demand.
+- Owned the whole data science workflow on the client's data in Azure Databricks, from EDA, cleaning and feature engineering to training and evaluation, to forecast sales across a packaged-food product portfolio.
+- Modeled which products eat into each other's sales and identified the top performers, to guide assortment and demand planning.
+- Served the model from a Databricks Model Serving endpoint that an LLM agent in Microsoft Teams calls for sales forecasts and cannibalization analysis on demand.
 
 **Stack:** Python, scikit-learn, MLflow, Azure Databricks Model Serving
 </details>
 
 <details>
-<summary><b>Plant maintenance RAG assistant</b> · industrial bakery</summary>
+<summary><b>Plant maintenance RAG assistant</b> · food manufacturing</summary>
 <br>
 
-- Built the RAG system behind an iPad assistant that answers failure-code, maintenance and operating questions from ingested machine manuals, citing the source of every answer.
-- Owned retrieval and generation on the client's Azure, using a Microsoft Foundry and Azure AI Search vector index.
+- Built the RAG system behind an iPad assistant that answers failure-code, maintenance and operations questions from ingested machine manuals, citing the source of every answer.
+- Owned retrieval and generation in the client's Azure environment, on Microsoft Foundry and an Azure AI Search vector index, delivering it alongside Microsoft engineers.
 
 **Stack:** Microsoft Foundry, Azure AI Search, Python
 </details>
@@ -72,11 +80,11 @@ Since 2023 I've also been a university professor, teaching AI, software, electro
 ## Stack
 
 <p align="center">
-  <img src="assets/genai-stack.svg" width="100%" alt="Models: Claude, GPT, Gemini, Llama, Qwen, DeepSeek, Kimi, GLM. Agent frameworks: DSPy, LangGraph, LangChain, Deep Agents, CrewAI, MCP. Coding agents: Claude Code, Codex, OpenCode, Genie Code. Platforms: Databricks, MLflow, Microsoft Foundry, Azure, AWS.">
+  <img src="assets/genai-stack.svg" width="100%" alt="Models: Claude, GPT, Gemini, Llama, Qwen, DeepSeek, Kimi, GLM. Agent frameworks: DSPy, LangGraph, LangChain, Deep Agents, CrewAI, MCP, n8n. Coding agents: Claude Code, Codex, OpenCode, Genie Code, Omnigent, Hermes Agent, OpenClaw. Platforms: Databricks, MLflow, Microsoft Foundry, Azure, AWS, Bedrock.">
 </p>
 
 <p align="center">
-  <img src="assets/engineering-stack.svg" width="100%" alt="ML and data: PyTorch, TensorFlow, Keras, scikit-learn, OpenCV, NumPy, pandas, Plotly. Languages: Python, SQL, Bash, TypeScript, C, C++, Go. Backend and data: FastAPI, Flask, Streamlit, React, PostgreSQL, MySQL, MongoDB, Redis. Infra: Docker, Linux, Hetzner, Coolify, Tailscale, Cloudflare, OpenTofu, Ansible, SOPS.">
+  <img src="assets/engineering-stack.svg" width="100%" alt="ML and data: PyTorch, TensorFlow, Keras, scikit-learn, OpenCV, NumPy, pandas, Plotly. Languages: Python, SQL, Bash, TypeScript, C, C++, Go, MATLAB, Assembly. Backend: FastAPI, Flask, Streamlit, Dash, React. Databases: PostgreSQL, MySQL, MongoDB, Redis, ChromaDB, Elasticsearch. Infra: Docker, Linux, Hetzner, Coolify, Tailscale, Cloudflare, OpenTofu, Ansible, SOPS.">
 </p>
 
 ## Certifications

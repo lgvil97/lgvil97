@@ -24,9 +24,9 @@
 <clipPath id="t1"><rect class="typer" style="animation-delay:4s" x="56" y="196" width="540" height="40"/></clipPath>
 <text clip-path="url(#t1)" x="56" y="224" font-size="24" font-weight="600" fill="#4EA8FF">Multi-agent systems on Databricks.</text>
 <clipPath id="t2"><rect class="typer" style="animation-delay:8s" x="56" y="196" width="540" height="40"/></clipPath>
-<text clip-path="url(#t2)" x="56" y="224" font-size="24" font-weight="600" fill="#4EA8FF">Self-hosted AI on zero-trust infra.</text>
+<text clip-path="url(#t2)" x="56" y="224" font-size="24" font-weight="600" fill="#4EA8FF">Guardrails and a judge on every answer.</text>
 <clipPath id="t3"><rect class="typer" style="animation-delay:12s" x="56" y="196" width="540" height="40"/></clipPath>
-<text clip-path="url(#t3)" x="56" y="224" font-size="24" font-weight="600" fill="#4EA8FF">RAG that cites its sources.</text>
+<text clip-path="url(#t3)" x="56" y="224" font-size="24" font-weight="600" fill="#4EA8FF">Self-hosted AI on zero-trust infra.</text>
 <clipPath id="t4"><rect class="typer" style="animation-delay:16s" x="56" y="196" width="540" height="40"/></clipPath>
 <text clip-path="url(#t4)" x="56" y="224" font-size="24" font-weight="600" fill="#4EA8FF">From firmware in C to GenAI.</text>
 
@@ -46,13 +46,13 @@
 <text x="820" y="55" font-size="14" font-weight="600" fill="#A9BEDF">Finance</text>
 <circle cx="800" cy="100" r="12" fill="#0B1B3A" stroke="#4EA8FF" stroke-width="3"/>
 <circle cx="800" cy="100" r="4" fill="#4EA8FF"/>
-<text x="820" y="105" font-size="14" font-weight="600" fill="#A9BEDF">HR</text>
+<text x="820" y="105" font-size="14" font-weight="600" fill="#A9BEDF">Sales</text>
 <circle cx="800" cy="150" r="12" fill="#0B1B3A" stroke="#4EA8FF" stroke-width="3"/>
 <circle cx="800" cy="150" r="4" fill="#4EA8FF"/>
-<text x="820" y="155" font-size="14" font-weight="600" fill="#A9BEDF">IoT</text>
+<text x="820" y="155" font-size="14" font-weight="600" fill="#A9BEDF">HR</text>
 <circle cx="800" cy="200" r="12" fill="#0B1B3A" stroke="#4EA8FF" stroke-width="3"/>
 <circle cx="800" cy="200" r="4" fill="#4EA8FF"/>
-<text x="820" y="205" font-size="14" font-weight="600" fill="#A9BEDF">RTM</text>
+<text x="820" y="205" font-size="14" font-weight="600" fill="#A9BEDF">Plants</text>
 <circle cx="800" cy="250" r="12" fill="#0B1B3A" stroke="#4EA8FF" stroke-width="3"/>
 <circle cx="800" cy="250" r="4" fill="#4EA8FF"/>
 <text x="820" y="255" font-size="14" font-weight="600" fill="#A9BEDF">Docs</text>
